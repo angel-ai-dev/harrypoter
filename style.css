@@ -1,0 +1,89 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para que no se estire demasiado */
+    flex-direction: column;
+    gap: 15px; /* Espacio entre filas */
+    justify-content: center;
+    align-items: center;
+}
+
+.row-card {
+    background: white;
+    display: flex; /* Alineamos imagen y texto de lado a lado */
+    align-items: center;
+    width: 350px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid #740001; /* Detalle de color lateral */
+}
+
+.row-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover;
+    margin-right: 20px;
+    background-color: #eee;
+}
+
+.info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.info p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.row-card.active {
+    background-color: #6dc75a;
+}
+
+.row-card:hover {
+    background-color: rgb(153, 150, 150);
+}
+
+/* ========================= */
+/* MEDIA QUERIES */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+    #list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+
+    #list-container {
+        grid-template-columns: 1fr;
+    }
+
+    .row-card {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row-card img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
