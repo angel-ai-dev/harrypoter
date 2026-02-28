@@ -65,6 +65,68 @@ body {
 /* MEDIA QUERIES */
 /* ========================= */
 
+/* Tablet */
+@media (max-width: 1024px) {
+    #list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+
+    #list-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .row-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .row-card img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 10px 0;
+    }
+
+    .info h2 {
+        font-size: 1em;
+    }
+
+    .info p {
+        font-size: 0.8em;
+    }
+}
+
+/* Texto */
+.info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.info p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Estados */
+.row-card.active {
+    background-color: #6dc75a;
+}
+
+.row-card:hover {
+    background-color: rgb(153, 150, 150);
+}
+
+/* ========================= */
+/* MEDIA QUERIES */
+/* ========================= */
+
 /* Laptop / Tablet grande */
 @media (max-width: 1024px) {
     #list-container {
@@ -96,3 +158,4 @@ body {
         margin-bottom: 10px;
     }
 }
+
