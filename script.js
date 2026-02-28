@@ -68,6 +68,14 @@ botones.forEach(boton => {
             // vuelve a pedir datos a la api
             const response = await fetch('https://hp-api.onrender.com/api/characters');
             const data = await response.json();
+         if (casa === "volver") {
+                const todos = data
+                    .filter(c => c.image !== "")
+                    .slice(0, 25);
+
+                todos.forEach(createRow);
+                return;
+            }
 
             // aplica filtros e imagen
             const filtrados = data

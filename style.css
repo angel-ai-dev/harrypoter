@@ -7,37 +7,39 @@ body {
     padding: 20px;
 }
 
+/* CONTENEDOR PRINCIPAL */
 #list-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Desktop */
+    gap: 20px;
     width: 100%;
-    max-width: 600px; /* Ancho máximo para que no se estire demasiado */
-    flex-direction: column;
-    gap: 15px; /* Espacio entre filas */
-    justify-content: center;
-    align-items: center;
+    max-width: 1200px;
 }
 
+/* CARD */
 .row-card {
     background: white;
-    display: flex; /* Alineamos imagen y texto de lado a lado */
+    display: flex;
     align-items: center;
-    width: 350px;
+    width: 100%; /* IMPORTANTE: quitamos el width fijo */
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-left: 5px solid #740001; /* Detalle de color lateral */
+    border-left: 5px solid #740001;
+    transition: 0.3s ease;
 }
 
+/* Imagen */
 .row-card img {
     width: 80px;
     height: 80px;
-    border-radius: 50%; /* Imagen circular */
+    border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
     background-color: #eee;
 }
 
+/* Texto */
 .info h2 {
     margin: 0;
     font-size: 1.2em;
@@ -50,6 +52,7 @@ body {
     font-size: 0.9em;
 }
 
+/* Estados */
 .row-card.active {
     background-color: #6dc75a;
 }
@@ -62,22 +65,28 @@ body {
 /* MEDIA QUERIES */
 /* ========================= */
 
+/* Laptop / Tablet grande */
+@media (max-width: 1024px) {
+    #list-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /* Tablet */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     #list-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Celular */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
     #list-container {
         grid-template-columns: 1fr;
     }
 
     .row-card {
-        width: 100%;
         flex-direction: column;
         text-align: center;
     }

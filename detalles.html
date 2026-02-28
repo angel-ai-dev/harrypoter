@@ -2,13 +2,25 @@
 <html>
 <head>
     <title>detalle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    <button id="btn-volver">Volver</button>
 
+    <div id="detalle-container"></div>
     <!-- contenedor donde se mostrara el personaje -->
     <div id="detalle"></div>
 
     <script>
+    
+    const btnVolver = document.getElementById("btn-volver");
+
+btnVolver.addEventListener("click", () => {
+    window.history.back(); // vuelve a la página anterior
+});
         // referencia al contenedor
         const container = document.getElementById('detalle');
 
